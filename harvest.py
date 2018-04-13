@@ -38,31 +38,60 @@ def make_melon_types():
     all_melon_types = []
 
     # Fill in the rest
-    musk = MelonType("musk", 1998, "green", True, True, "Muskmelon")
-    musk.add_pairing("mint")
-    all_melon_types.append(musk)
+    musk_melon = MelonType("musk", 1998, "green", True, True, "Muskmelon")
+    musk_melon.add_pairing("mint")
+    all_melon_types.append(musk_melon)
 
-    cas = MelonType("cas", 2003, "orange", False, False, "Casaba")
-    cas.add_pairing("strawberries", "mint")
-    all_melon_types.append(cas)
+    casaba = MelonType("cas", 2003, "orange", False, False, "Casaba")
+    casaba.add_pairing("strawberries")
+    casaba.add_pairing("mint")
+    all_melon_types.append(casaba)
 
-    cren = MelonType("cren", 1996, "green", False, False, "Crenshaw")
-    cren.add_pairing("poscuitto")
-    all_melon_types.append(cren)
+    crenshaw = MelonType("cren", 1996, "green", False, False, "Crenshaw")
+    crenshaw.add_pairing("poscuitto")
+    all_melon_types.append(crenshaw)
 
-    yw = MelonType("yw", 2013, "yellow", False, True, "Yellow Watermelon")
-    yw.add_pairing("ice cream")
-    all_melon_types.append(yw)
+    yellow_watermelon = MelonType("yw", 2013, "yellow", False, True, "Yellow Watermelon")
+    yellow_watermelon.add_pairing("ice cream")
+    all_melon_types.append(yellow_watermelon)
 
     return all_melon_types
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
 
+    #get melon name
+
+    #get melon pairing(s)  (for loop?)
+
+    #format printing
+    for melon in melon_types:
+        name = melon.name
+        print name + " pairs with"
+
+        pairings = melon.pairings
+
+
+        for pairing in pairings:
+            print "- " + pairing
+
+
+    return None
+
     # Fill in the rest
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
+
+    #create empty dictionary
+
+    #for each melon in melon list, create keys, set value to code melon[i][0]
+    melon_codes = {}
+
+    for melon in melon_types:
+        melon_codes[melon.code] = melon
+
+    return melon_codes
 
     # Fill in the rest
 
@@ -88,3 +117,8 @@ def get_sellability_report(melons):
 
 
 
+melons = make_melon_types()
+
+print_pairing_info(melons)
+
+print make_melon_type_lookup(melons)
