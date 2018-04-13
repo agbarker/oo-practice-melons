@@ -120,9 +120,9 @@ def get_sellability_report(melons):
 class Melon(object):
     """A species of melon at a melon farm."""
 
-    def __init__(self, type, shape_rating, color_rating, field, harvester):
+    def __init__(self, type_of_melon, shape_rating, color_rating, field, harvester):
         """Initialize a melon."""
-        self.type = type
+        self.melon_type = type_of_melon
         self.shape_rating = shape_rating
         self.color_rating = color_rating
         self.field = field
@@ -138,9 +138,52 @@ class Melon(object):
 
 
 
+def make_melons(melon_codes_dict):
+    """Makes all the melons"""
 
-melons = make_melon_types()
+    all_melons = []
 
-print_pairing_info(melons)
+    melon_1 = Melon(melon_codes_dict['yw'], 8, 7, 2, "Sheila")
+    all_melons.append(melon_1)
 
-print make_melon_type_lookup(melons)
+    melon_2 = Melon(melon_codes_dict['yw'], 3, 4, 2, "Sheila")
+    all_melons.append(melon_2)
+
+    melon_3 = Melon(melon_codes_dict['yw'], 9, 8, 3, "Sheila")
+    all_melons.append(melon_3)
+
+    melon_4 = Melon(melon_codes_dict['cas'], 10, 6, 35, "Sheila")
+    all_melons.append(melon_4)
+
+    melon_5 = Melon(melon_codes_dict['cren'], 8, 9, 35, "Michael")
+    all_melons.append(melon_5)
+
+    melon_6 = Melon(melon_codes_dict['cren'], 8, 2, 35, "Michael")
+    all_melons.append(melon_6)
+
+    melon_7 = Melon(melon_codes_dict['cren'], 2, 3, 4, "Michael")
+    all_melons.append(melon_7)
+
+    melon_8 = Melon(melon_codes_dict['musk'], 6, 7, 4, "Michael")
+    all_melons.append(melon_8)
+
+    melon_9 = Melon(melon_codes_dict['yw'], 7, 10, 3, "Sheila")
+    all_melons.append(melon_9)
+
+    return all_melons
+
+def get_sellability_report(all_melons):
+    
+
+
+
+melon_types = make_melon_types()
+
+#print_pairing_info(melons)
+
+# print make_melon_type_lookup(melons)
+
+melons_by_id = make_melon_type_lookup(melon_types)
+
+print make_melons(melons_by_id)
+
