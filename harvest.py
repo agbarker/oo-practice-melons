@@ -76,7 +76,7 @@ def print_pairing_info(melon_types):
             print "- " + pairing
 
 
-    return None
+    # return None
 
     # Fill in the rest
 
@@ -114,6 +114,28 @@ def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
 
     # Fill in the rest 
+
+
+
+class Melon(object):
+    """A species of melon at a melon farm."""
+
+    def __init__(self, type, shape_rating, color_rating, field, harvester):
+        """Initialize a melon."""
+        self.type = type
+        self.shape_rating = shape_rating
+        self.color_rating = color_rating
+        self.field = field
+        self.harvester = harvester
+
+        # Fill in the rest
+
+    def is_sellable(melon, rating = 5):
+        """Returns True or False if melon is sellable"""
+
+        if melon.shape_rating > rating and melon.color_rating > rating and field != 3:
+            return True
+
 
 
 
